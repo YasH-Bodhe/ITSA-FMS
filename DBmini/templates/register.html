@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 125px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container styling */
+        .register-container {
+            background-color: #fff;
+            width: 900px;  /* Increased width for a roomier feel */
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        /* Header styling */
+        .register-container h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        /* Label styling */
+        .register-container label {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 8px;
+            display: block;
+            text-align: left;
+        }
+
+        /* Input styling */
+        .register-container input[type="text"],
+        .register-container input[type="password"],
+        .register-container input[type="email"],
+        .register-container select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 14px;
+            transition: border 0.3s;
+        }
+
+        /* Input focus effect */
+        .register-container input:focus,
+        .register-container select:focus {
+            border-color: #4caf50;
+            outline: none;
+        }
+
+        /* Button styling */
+        .register-container button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Button hover effect */
+        .register-container button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Link to login */
+        .register-container .login-link {
+            margin-top: 15px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* Login link styling */
+        .register-container .login-link a {
+            color: #4caf50;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        /* Login link hover effect */
+        .register-container .login-link a:hover {
+            color: #388e3c;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>Create Your Account</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Register</button>
+        </form>
+        <div class="login-link">
+            <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+        </div>
+    </div>
+</body>
+</html>

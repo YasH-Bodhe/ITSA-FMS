@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/static/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-user-circle"></i> User Profile</h1>
+        </div>
+    </header>
+    
+    <main>
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2>Welcome, {{ user.username }}!</h2>
+            </div>
+            
+            <div class="profile-info">
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <span class="label">Email</span>
+                        <p>{{ user.email }}</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-user-tag"></i>
+                    <div>
+                        <span class="label">First Name</span>
+                        <p>{{ user.first_name|default:"Not provided" }}</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-user-tag"></i>
+                    <div>
+                        <span class="label">Last Name</span>
+                        <p>{{ user.last_name|default:"Not provided" }}</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <span class="label">Last Login</span>
+                        <p>{{ user.last_login|date:"Y-m-d H:i:s" }}</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ITSA Fest Management System</p>
+    </footer>
+</body>
+</html>

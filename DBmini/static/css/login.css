@@ -1,0 +1,167 @@
+body {
+    font-family: 'PT Sans', sans-serif;
+    background-color: #f9f9ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #211C84 0%, #7A73D1 100%);
+}
+
+.login-container {
+    background-color: white;
+    width: 420px;
+    padding: 40px;
+    box-shadow: 0px 8px 30px rgba(33, 28, 132, 0.2);
+    border-radius: 12px;
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h2 {
+    color: #211C84;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.login-header p {
+    color: #7A73D1;
+    margin-top: 0;
+    font-size: 16px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+.login-container label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+    color: #4D55CC;
+    font-size: 15px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 2px solid #B5A8D5;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #f9f9ff;
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+    outline: none;
+    border-color: #4D55CC;
+    box-shadow: 0 0 0 3px rgba(77, 85, 204, 0.2);
+}
+
+.login-container select {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 2px solid #B5A8D5;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #f9f9ff;
+}
+
+.login-container input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background-color: #4D55CC;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.login-container input[type="submit"]:hover {
+    background-color: #211C84;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(33, 28, 132, 0.2);
+}
+
+.message-container {
+    background-color: #f9f9ff;
+    border-left: 4px solid #4D55CC;
+    padding: 12px;
+    margin: 20px 0;
+    border-radius: 6px;
+}
+
+.message {
+    color: #211C84;
+    margin: 0;
+    font-size: 14px;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.forgot-password {
+    margin-bottom: 15px;
+}
+
+.forgot-password a, .register-now a {
+    text-decoration: none;
+    color: #4D55CC;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.forgot-password a:hover, .register-now a:hover {
+    color: #211C84;
+    text-decoration: underline;
+}
+
+.register-now p {
+    color: #666;
+    margin: 0;
+}
+
+/* For error messages and validation styling - typically added by Django */
+.errorlist {
+    color: #ff3860;
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 15px;
+    font-size: 14px;
+}
+
+ul {
+    padding-left: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+    .login-container {
+        width: 90%;
+        padding: 30px 20px;
+    }
+}

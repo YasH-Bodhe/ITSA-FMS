@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for {{ event.name }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/event_reg.css">
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>Register for {{ event.name }}</h1>
+            <div class="header-line"></div>
+            <p class="subtitle">Complete your registration to secure your spot</p>
+        </div>
+        
+        <div class="content">
+            <div class="image-container">
+                <div class="event-image">
+                    <img src="{{ event.image.url }}" alt="{{ event.name }}">
+                </div>
+                <div class="event-tags">
+                    <span class="event-tag">{{ event.category }}</span>
+                </div>
+            </div>
+            
+            <div class="event-details">
+                <h2><i class="fas fa-info-circle"></i> Event Details</h2>
+                
+                <div class="detail-item">
+                    <span class="detail-label"><i class="fas fa-tag"></i> Category</span>
+                    <span class="detail-value">{{ event.category }}</span>
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-label"><i class="fas fa-calendar-day"></i> Start Date</span>
+                    <span class="detail-value">{{ event.start_date }}</span>
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-label"><i class="fas fa-calendar-check"></i> End Date</span>
+                    <span class="detail-value">{{ event.end_date }}</span>
+                </div>
+                
+
+                
+                <div class="event-description">
+                    <h3><i class="fas fa-align-left"></i> About This Event</h3>
+                    <p>{{ event.description }}</p>
+                </div>
+            </div>
+            
+            <div class="register-form">
+                <h2><i class="fas fa-clipboard-list"></i> Registration Form</h2>
+                
+                <div class="form-header">
+                    <div class="form-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <p>Please fill in your details below</p>
+                </div>
+                
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    
+                    
+                    <div class="form-group">
+                        <button type="submit"><i class="fas fa-check-circle"></i> Register Now</button>
+                    </div>
+                    
+                    <p class="form-footer">By registering, you confirm that the provided information is accurate.</p>
+                </form>
+            </div>
+        </div>
+        
+        <div class="back-link">
+            <a href="javascript:history.back()"><i class="fas fa-arrow-left"></i> Back to Events</a>
+        </div>
+    </div>
+</body>
+</html>

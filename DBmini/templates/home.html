@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Innovision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/home.css" />
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="/static/images/ITSA logo.png" alt="Innovision Logo" class="logo">
+            <h1>INNOVISION</h1>
+        </div>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="{% url 'manage_registrations' %}">Manage</a>
+        <a href="#about">About</a>
+        <a href="{% url 'profile' %}">Profile</a>
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}    
+            <button type="submit" class="logout-button">Logout</button>
+        </form>
+    </nav>
+    <main>
+        <section id="home">
+            <!-- Image carousel replaces the single home.jpg -->
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="/static/images/Banner 1.jpg" alt="Event Banner 1" />
+                    <img src="/static/images/Banner 2.jpg" alt="Event Banner 2" />
+                    <img src="/static/images/Banner 3.jpg" alt="Event Banner 3" />
+                    <img src="/static/images/Banner 4.jpg" alt="Event Banner 4" />
+                
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                </div>
+            </div>
+        </section>
+        <section id="events">
+            {% if technical_events %}
+                <h2>Technical Events</h2>
+                <div class="event-grid">
+                    {% for event in technical_events %}
+                        <div class="event-card">
+                            <h3>{{ event.name }}</h3>
+                            <a href="{% url 'register_event' event.id %}">
+                                <img src="{{ event.image.url }}" alt="{{ event.name }}" />
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if non_technical_events %}
+                <h2>Non Technical Events</h2>
+                <div class="event-grid">
+                    {% for event in non_technical_events %}
+                        <div class="event-card">
+                            <h3>{{ event.name }}</h3>
+                            <a href="{% url 'register_event' event.id %}">
+                                <img src="{{ event.image.url }}" alt="{{ event.name }}" />
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if sports_events %}
+                <h2>Sports Events</h2>
+                <div class="event-grid">
+                    {% for event in sports_events %}
+                        <div class="event-card">
+                            <h3>{{ event.name }}</h3>
+                            <a href="{% url 'register_event' event.id %}">
+                                <img src="{{ event.image.url }}" alt="{{ event.name }}" />
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if cultural_events %}
+                <h2>Cultural Events</h2>
+                <div class="event-grid">
+                    {% for event in cultural_events %}
+                        <div class="event-card">
+                            <h3>{{ event.name }}</h3>
+                            <a href="{% url 'register_event' event.id %}">
+                                <img src="{{ event.image.url }}" alt="{{ event.name }}" />
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if gaming_events %}
+                <h2>Gaming Events</h2>
+                <div class="event-grid">
+                    {% for event in gaming_events %}
+                        <div class="event-card">
+                            <h3>{{ event.name }}</h3>
+                            <a href="{% url 'register_event' event.id %}">
+                                <img src="{{ event.image.url }}" alt="{{ event.name }}" />
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>
+                "Welcome to Innovision! Your one-stop platform for managing and participating in exciting college events. 
+                Explore, register, and be part of unforgettable experiences!"
+            </p>
+        </section>
+
+
+
+        <!--Contact Section-->
+        <section id="home-contact-section">
+            <div class="home-contact-heading">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="home-contact-container">
+                <div class="home-contact-info">
+                    <div class="home-info-card">
+                        <div class="home-icon">📍</div>
+                        <h3>Our Location</h3>
+                        <p>Bharti Vidyapeeth College of Engineering. Belpada, Navi Mumbai</p>
+                    </div>
+                    <div class="home-info-card">
+                        <div class="home-icon">📞</div>
+                        <h3>Call Us</h3>
+                        <p>+91 9876543210</p>
+                        <p>+91 9876543210</p>
+                    </div>
+                    <div class="home-info-card">
+                        <div class="home-icon">✉️</div>
+                        <h3>Email Us</h3>
+                        <p>info@innovision.edu</p>
+                        <p>support@innovision.edu</p>
+                    </div>
+                    <div class="home-info-card">
+                        <div class="home-icon">🕒</div>
+                        <h3>Contact Hours</h3>
+                        <p>Monday-Friday: 9:00 AM - 5:00 PM</p>
+                        <p>Saturday: 10:00 AM - 2:00 PM</p>
+                    </div>
+                </div>
+                <div class="home-contact-form-container">
+                    <form id="homeContactForm" class="home-contact-form">
+                        <h3>Send Us a Message</h3>
+                        <div class="home-form-group">
+                            <label for="homeName">Your Name</label>
+                            <input type="text" id="homeName" name="name" required>
+                        </div>
+                        <div class="home-form-group">
+                            <label for="homeEmail">Your Email</label>
+                            <input type="email" id="homeEmail" name="email" required>
+                        </div>
+                        <div class="home-form-group">
+                            <label for="homeSubject">Subject</label>
+                            <input type="text" id="homeSubject" name="subject" required>
+                        </div>
+                        <div class="home-form-group">
+                            <label for="homeMessage">Your Message</label>
+                            <textarea id="homeMessage" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="home-submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Home FAQ Section -->
+        <section id="home-faq-section">
+            <div class="home-faq-heading">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="home-faq-container">
+                <div class="home-faq-item">
+                    <div class="home-faq-question">
+                        How do I register for an event?
+                        <span class="home-toggle-icon">+</span>
+                    </div>
+                    <div class="home-faq-answer">
+                        <div class="home-answer-content">
+                            To register for an event, navigate to the Events section on our homepage, click on the event you're interested in, and follow the registration instructions. You'll need to be logged in to complete the registration process.
+                        </div>
+                    </div>
+                </div>
+                <div class="home-faq-item">
+                    <div class="home-faq-question">
+                        Can I participate in multiple events?
+                        <span class="home-toggle-icon">+</span>
+                    </div>
+                    <div class="home-faq-answer">
+                        <div class="home-answer-content">
+                            Yes! You can register and participate in as many events as you'd like, provided there are no scheduling conflicts. Check the event details for dates and times to plan accordingly.
+                        </div>
+                    </div>
+                </div>
+                <div class="home-faq-item">
+                    <div class="home-faq-question">
+                        How can I cancel my registration?
+                        <span class="home-toggle-icon">+</span>
+                    </div>
+                    <div class="home-faq-answer">
+                        <div class="home-answer-content">
+                            To cancel a registration, go to your Profile page and view your registered events. There you'll find an option to cancel your registration. Please note that some events may have cancellation deadlines.
+                        </div>
+                    </div>
+                </div>
+                <div class="home-faq-item">
+                    <div class="home-faq-question">
+                        Are there any registration fees?
+                        <span class="home-toggle-icon">+</span>
+                    </div>
+                    <div class="home-faq-answer">
+                        <div class="home-answer-content">
+                            Registration fees vary by event. Free events are clearly marked, while others may have a nominal fee. The fee details are provided on each event's registration page.
+                        </div>
+                    </div>
+                </div>
+                <div class="home-faq-item">
+                    <div class="home-faq-question">
+                        What types of technical events are offered?
+                        <span class="home-toggle-icon">+</span>
+                    </div>
+                    <div class="home-faq-answer">
+                        <div class="home-answer-content">
+                            Our technical events include hackathons, coding competitions, robotics challenges, AI/ML workshops, technical paper presentations, and more. These events are designed to test and enhance your technical skills.
+                        </div>
+                    </div>
+                </div>
+                <div class="home-faq-item">
+                    <div class="home-faq-question">
+                        Do I need prior experience for non-technical events?
+                        <span class="home-toggle-icon">+</span>
+                    </div>
+                    <div class="home-faq-answer">
+                        <div class="home-answer-content">
+                            Most non-technical events are designed to be accessible to all participants regardless of experience level. Each event description will specify if any prerequisites or experience is recommended.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <p>&copy; 2025 | ITSA Fest Management System</p>
+    </footer>
+
+
+
+
+
+
+    <!-- Add JavaScript for the carousel -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.carousel-slide img');
+            const dots = document.querySelectorAll('.dot');
+            const totalSlides = slides.length;
+            
+            // Function to update carousel to show specific slide
+            function goToSlide(slideIndex) {
+                if (slideIndex >= totalSlides) {
+                    slideIndex = 0;
+                } else if (slideIndex < 0) {
+                    slideIndex = totalSlides - 1;
+                }
+                
+                document.querySelector('.carousel-slide').style.transform = `translateX(-${slideIndex * 100}%)`;
+                
+                // Update active dot
+                document.querySelector('.dot.active').classList.remove('active');
+                dots[slideIndex].classList.add('active');
+                
+                currentSlide = slideIndex;
+            }
+            
+            // Auto advance slides every 5 seconds
+            setInterval(function() {
+                goToSlide(currentSlide + 1);
+            }, 5000);
+            
+            // Add click handlers to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                });
+            });
+            
+            // Initialize first slide
+            goToSlide(0);
+        });
+    </script>
+
+
+   <!-- JavaScript for form handling and FAQ accordion -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Contact Form Submission
+        const homeContactForm = document.getElementById('homeContactForm');
+        
+        if (homeContactForm) {
+            homeContactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Collect form data
+                const formData = {
+                    name: document.getElementById('homeName').value,
+                    email: document.getElementById('homeEmail').value,
+                    subject: document.getElementById('homeSubject').value,
+                    message: document.getElementById('homeMessage').value
+                };
+                
+                // Display success message (in a real implementation, this would send data to a server)
+                alert('Thank you for your message! We will get back to you soon.');
+                homeContactForm.reset();
+                
+                // In a real implementation, you would send the data to a server here
+                console.log('Form submitted with data:', formData);
+            });
+        }
+        
+        // FAQ Accordion Functionality
+        const homeFaqQuestions = document.querySelectorAll('.home-faq-question');
+        
+        homeFaqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                // Toggle active class on the question
+                this.classList.toggle('active');
+                
+                // Toggle the visibility of the answer
+                const answer = this.nextElementSibling;
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                    this.querySelector('.home-toggle-icon').textContent = '+';
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    this.querySelector('.home-toggle-icon').textContent = '−';
+                }
+            });
+        });
+    });
+    </script>
+
+
+</body>
+</html>

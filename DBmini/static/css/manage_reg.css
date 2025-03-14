@@ -1,0 +1,181 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container for registered events */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Heading styles */
+h2 {
+    font-size: 2.4em;
+    color: #2d3e50;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Back to Home button */
+.back-button-container {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #2980b9;
+}
+
+/* Event list */
+ul {
+    list-style: none;
+}
+
+li {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px; /* Increased spacing between details and QR code */
+    flex-wrap: wrap;
+}
+
+li:hover {
+    background-color: #f7fafc;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Event details */
+.event-details {
+    flex: 1;
+    min-width: 300px;
+}
+
+strong {
+    color: #2980b9;
+    font-size: 1.1em;
+}
+
+li p {
+    margin-top: 10px;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* QR code styling */
+.qr-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+}
+
+.qr-code img {
+    width: 150px; /* Adjusted size */
+    height: 150px; /* Adjusted size */
+    border: 2px solid #eaeaea;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.qr-code img:hover {
+    transform: scale(1.05);
+}
+
+/* Form and delete button */
+form {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+/* Empty state message */
+p {
+    text-align: center;
+    font-size: .9em;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 30px auto;
+    }
+
+    li {
+        padding: 20px;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .qr-code {
+        width: 100%;
+    }
+
+    .qr-code img {
+        width: 130px;
+        height: 130px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    
+    .back-button {
+        display: block;
+        width: 100%;
+    }
+}

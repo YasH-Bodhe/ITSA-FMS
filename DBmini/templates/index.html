@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INNOVISION - Event Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            color: #343a40;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #211C84, #4D55CC);
+            color: white;
+            box-shadow: 0 4px 12px rgba(33, 28, 132, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.1rem;
+        }
+
+        .navbar {
+            background-color: #211C84;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            margin: 0 15px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navbar a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #B5A8D5;
+            transition: width 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #B5A8D5;
+        }
+
+        .navbar a:hover:after {
+            width: 100%;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #7A73D1, 0 0 20px #B5A8D5;
+            }
+            to {
+                text-shadow: 0 0 15px #7A73D1, 0 0 30px #B5A8D5, 0 0 40px #B5A8D5;
+            }
+        }
+
+        .login-options {
+            display: flex;
+            justify-content: center;
+            margin: 40px 20px;
+            gap: 30px;
+        }
+
+        .login-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            width: 350px;
+            height: 260px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(122, 115, 209, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .login-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(77, 85, 204, 0.25);
+        }
+
+        .login-card h2 {
+            color: #211C84;
+            margin: 0 0 15px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .login-card h2:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: #7A73D1;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .login-card p {
+            color: #555;
+            margin-bottom: 45px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #4D55CC, #211C84);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(77, 85, 204, 0.2);
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #211C84, #4D55CC);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(77, 85, 204, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #211C84, #4D55CC);
+            color: white;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .login-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .login-card {
+                width: 85%;
+                max-width: 350px;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to the ITSA Fest Management System</h1>
+        <p>By students of Information Technology Department</p>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#login">LOGIN</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+
+        <section id="login" class="login-options">
+            <div class="login-card">
+                <h2>User Login</h2>
+                <p>Join us to explore and register for upcoming events!</p>
+                <a href="{% url 'login' %}" class="btn">Login as User</a>
+            </div>
+            <div class="login-card">
+                <h2>Admin Login</h2>
+                <p>Manage events and view registrations!</p>
+                <a href="{% url 'admin_login' %}" class="btn">Login as Admin</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 | ITSA Fest Management System</p>
+    </footer>
+</body>
+
+</html>

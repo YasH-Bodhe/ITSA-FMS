@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: 'PT Sans', sans-serif;
+    background-color: #f5f9fb; /* Subtle off-white */
+}
+
+.login-container {
+    width: 400px;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 100px auto; /* Centering the login form */
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #2b2d42; /* Charcoal black */
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container form input[type="text"],
+.login-container form input[type="password"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #8d99ae; /* Cool gray */
+    border-radius: 5px;
+}
+
+.login-container form input[type="submit"] {
+    padding: 10px;
+    background-color: #d90429; /* Rich crimson */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-container form input[type="submit"]:hover {
+    background-color: #a00023; /* Darker shade */
+}
+
+.error-message {
+    color: #d90429; /* Rich crimson */
+    text-align: center;
+    margin: 10px 0;
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.register-now {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.register-now a {
+    color: #2b2d42; /* Charcoal black */
+    text-decoration: none;
+}
+
+.register-now a:hover {
+    text-decoration: underline;
+}

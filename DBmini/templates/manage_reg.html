@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Registered Events</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="/static/css/manage_reg.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Your Registered Events</h2>
+        
+        <!-- Back to Home button -->
+        <div class="back-button-container">
+            <a href="{% url 'home' %}" class="back-button">Back to Home</a>
+        </div>
+        
+        <ul>
+            {% for registration in registrations %}
+                <li>
+                    <div class="event-details">
+                        <strong>Event:</strong> {{ registration.event.name }} <br>
+                        <strong>Name:</strong> {{ registration.name }} <br>
+                        <strong>Email:</strong> {{ registration.email }} <br>
+                        <strong>Phone:</strong> {{ registration.phone }} <br>
+                        <form method="post" action="{% url 'delete_registration' registration.id %}">
+                            {% csrf_token %}
+                            <button type="submit">Delete</button>
+                        </form>
+                    </div>
+                    <div class="qr-code">
+                        <img src="data:image/png;base64,{{ registration.qr_code }}" alt="QR Code">
+                    </div>
+                </li>
+            {% empty %}
+                <p>You have not registered for any events.</p>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 ITSA Fest Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
