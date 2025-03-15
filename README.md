@@ -4,7 +4,7 @@ A web application built using Django for managing events and handling registrati
 
 ## Author
 
-Aswanth Satheesan
+Yash
 
 ## Features
 
