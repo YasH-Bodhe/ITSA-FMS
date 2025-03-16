@@ -3,6 +3,8 @@
 A web-based application built using **Django** to manage college events and registrations.  
 This system allows **users to register for events**, while **admins can create and manage events**.  
 
+---
+
 ## 🚀 Features  
 - ✅ **User Registration & Login** – Secure authentication system.  
 - ✅ **Event Management** – Admins can **add, edit, and delete** events.  
@@ -12,67 +14,94 @@ This system allows **users to register for events**, while **admins can create a
 
 ---
 
-## 🖼 Screenshots  
-📌 **(Add screenshots here)**  
+## 🌟 Tech Stack  
+- **💻 Backend:** Django 5.1.2  
+- **📅 Frontend:** HTML, CSS, JavaScript  
+- **📂 Database:** SQLite (Can be migrated to PostgreSQL)  
+- **🤖 Other:** QR Code Generator (`qrcode[pil]`)  
+
+---
+
+## 📀 Setup Instructions  
+
+### 1️⃣ Clone the Repository  
+```bash
+git clone https://github.com/YasH-Bodhe/ITSA-FMS.git
+cd ITSA-FMS
+```
+
+### 2️⃣ Install Python (If Not Installed)  
+- **Windows:** Download from [python.org](https://www.python.org/) and install.  
+- **Mac/Linux:** Python is usually pre-installed. Verify by running:  
+  ```bash
+  python --version
+  ```
+
+### 3️⃣ Set Up a Virtual Environment  
+```bash
+python -m venv venv
+venv\Scripts\activate  # (Windows)
+source venv/bin/activate  # (Mac/Linux)
+```
+
+### 4️⃣ Install Dependencies  
+```bash
+pip install -r requirements.txt
+```
+
+### 5️⃣ Apply Migrations  
+```bash
+python manage.py migrate
+```
+
+### 6️⃣ Create a Superuser (Admin Access)  
+```bash
+python manage.py createsuperuser
+```
+
+### 7️⃣ Run the Server  
+```bash
+python manage.py runserver
+```
+🔹 **Open:** [http://127.0.0.1:8000/](http://127.0.0.1:8000/) in your browser.  
+
+---
+
+## 🖼️ Screenshots  
+📌 **(Add screenshots here manually)**  
 
 Example:  
 ```md
 ![Home Page](https://your-image-link.com/homepage.png)
-⚡ Tech Stack
-Backend: Django 5.1.2
-Frontend: HTML, CSS, JavaScript
-Database: SQLite (Can be migrated to PostgreSQL)
-Other: QR Code Generator (qrcode[pil])
+```
 
+---
 
-📌 Setup Instructions
-1️⃣ Clone the Repository
-bash
-Copy
-Edit
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO
-2️⃣ Create a Virtual Environment
-bash
-Copy
-Edit
-python -m venv venv
-venv\Scripts\activate  # (Windows)
-source venv/bin/activate  # (Mac/Linux)
-3️⃣ Install Dependencies
-bash
-Copy
-Edit
-pip install -r requirements.txt
-4️⃣ Apply Migrations
-bash
-Copy
-Edit
-python manage.py migrate
-5️⃣ Create a Superuser (Admin Access)
-bash
-Copy
-Edit
-python manage.py createsuperuser
-6️⃣ Run the Server
-bash
-Copy
-Edit
-python manage.py runserver
-🔹 Open http://127.0.0.1:8000/ in your browser.
+## 🌐 Live Demo  
+🚀 **Live Version:** 🔗 _Coming Soon_ (Will be updated after deployment)  
 
-🌍 Live Demo
-🚀 Live Version: 🔗 Coming Soon (Will be updated after deployment)
+---
 
-🤝 Contributing
-Feel free to fork this repo and contribute!
+## 🤝 Contributing  
+We welcome contributions! Follow these steps:  
 
-📌 To contribute:
+1. **Fork the repository**  
+2. **Create a new branch:**  
+   ```bash
+   git checkout -b feature-name
+   ```
+3. **Make your changes and commit:**  
+   ```bash
+   git commit -m "Added new feature"
+   ```
+4. **Push to your branch:**  
+   ```bash
+   git push origin feature-name
+   ```
+5. **Open a Pull Request!**  
 
-Fork the repo
-Create a branch: git checkout -b feature-name
-Commit your changes: git commit -m "Added new feature"
-Push to your branch: git push origin feature-name
-Open a Pull Request!
-📜 License
-This project is open-source under the MIT License.
+---
+
+## 📚 License  
+This project is open-source under the **MIT License**.  
+
