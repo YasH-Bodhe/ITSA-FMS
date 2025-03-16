@@ -3,8 +3,6 @@
 A web-based application built using **Django** to manage college events and registrations.  
 This system allows **users to register for events**, while **admins can create and manage events**.  
 
----
-
 ## 🚀 Features  
 - ✅ **User Registration & Login** – Secure authentication system.  
 - ✅ **Event Management** – Admins can **add, edit, and delete** events.  
@@ -14,65 +12,55 @@ This system allows **users to register for events**, while **admins can create a
 
 ---
 
-## ⚡ Tech Stack  
-- **Backend:** Django 5.1.2  
-- **Frontend:** HTML, CSS, JavaScript  
-- **Database:** SQLite (Can be migrated to PostgreSQL)  
-- **Other:** QR Code Generator (`qrcode[pil]`)  
+## 🖼 Screenshots  
+📌 **(Add screenshots here)**  
 
----
+Example:  
+```md
+![Home Page](https://your-image-link.com/homepage.png)
+⚡ Tech Stack
+Backend: Django 5.1.2
+Frontend: HTML, CSS, JavaScript
+Database: SQLite (Can be migrated to PostgreSQL)
+Other: QR Code Generator (qrcode[pil])
 
-## 📌 Setup Instructions  
 
-### **1️⃣ Clone the Repository**  
-```bash
-git clone https://github.com/YasH-Bodhe/ITSA-FMS.git
-cd ITSA-FMS
-2️⃣ Install Python (If Not Installed)
-Windows: Download from python.org and install.
-Mac/Linux: Python is usually pre-installed. Verify by running:
+📌 Setup Instructions
+1️⃣ Clone the Repository
 bash
 Copy
 Edit
-python --version
-3️⃣ Set Up a Virtual Environment
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+cd YOUR_REPO
+2️⃣ Create a Virtual Environment
 bash
 Copy
 Edit
 python -m venv venv
 venv\Scripts\activate  # (Windows)
 source venv/bin/activate  # (Mac/Linux)
-4️⃣ Install Dependencies
+3️⃣ Install Dependencies
 bash
 Copy
 Edit
 pip install -r requirements.txt
-5️⃣ Apply Migrations
+4️⃣ Apply Migrations
 bash
 Copy
 Edit
 python manage.py migrate
-6️⃣ Create a Superuser (Admin Access)
+5️⃣ Create a Superuser (Admin Access)
 bash
 Copy
 Edit
 python manage.py createsuperuser
-7️⃣ Run the Server
+6️⃣ Run the Server
 bash
 Copy
 Edit
 python manage.py runserver
 🔹 Open http://127.0.0.1:8000/ in your browser.
 
-🖼 Screenshots
-📌 (Add screenshots here manually)
-
-Example:
-
-md
-Copy
-Edit
-![Home Page](https://your-image-link.com/homepage.png)
 🌍 Live Demo
 🚀 Live Version: 🔗 Coming Soon (Will be updated after deployment)
 
