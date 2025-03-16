@@ -1,7 +1,16 @@
-*.pyc
-__pycache__/
-db.sqlite3
-envi/
-.env
+# Ignore compiled Python files  
+*.pyc  
+__pycache__/  
 
-DBmini/DBmini/venv/
+# Ignore environment & secrets  
+db.sqlite3  
+envi/  
+.env  
+
+# Ignore virtual environment  
+venv/  
+DBmini/DBmini/venv/  
+
+# Ignore unnecessary system files  
+*.log  
+*.sqlite3-journal  
